@@ -5,8 +5,8 @@ This project is a pet insurance smart contract developed with the Truffle framew
 ## Features
 
 **· Purchase Insurance**: Users can buy insurance for their pets.  
-**· Submit Claims**: Insurance holders can submit claims for their pet's medical treatments. 
-**· Claim Review**: Contract owners can review and process claims.
+**· Submit Claims**: Insurance holders can submit claims for their pet's medical treatments.  
+**· Claim Review**: Contract owners can review and process claims.  
 
 ## Quick Start
 
