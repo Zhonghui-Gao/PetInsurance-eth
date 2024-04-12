@@ -32,17 +32,22 @@ Web3.js v1.10.0
 ## Installing
 1. #### Clone the repository
 ```bash
-git clone https://github.com/Zhonghui-Gao/PetInsurance-eth.git
-cd <filename>
+    git clone https://github.com/Zhonghui-Gao/PetInsurance-eth.git
+    cd <filename>
 ```
 2. #### Start Ganache
     Launch Ganache and create a new Ethereum blockchain workspace.
    
 3. #### Compile contracts
-    ` truffle compile `
-
+```bash
+    truffle compile 
+```
 4. #### Migrate contracts
-    `truffle migrate --reset`
+ ```bash
+    truffle migrate --reset
+ ```
 
 5. #### Run demo
-    `truffle test`
+```bash
+    truffle test
+```
