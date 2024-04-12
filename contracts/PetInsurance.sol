@@ -42,18 +42,19 @@ contract PetInsurance{
     }
 
     //保险产品的创建
-    function createInsurance(string memory name, uint cost) public {
-        require(msg.sender == onwer, "Only the contract onwer can create a new insurance.");
+    function createInsurance(string memory name, uint cost, string memory description) public {
+        require(msg.sender == owner, "Only the contract onwer can create a new insurance.");
         insurances.push(Insurance({
             id: insurances.length,
             name: name,
+            description: description,
             cost: cost,
-            active: true,
+            active: true
         }));
     }
 
     //购买保险
-    function buyInsurance(string insuranceID) public payable {
+    function buyInsurance(uint insuranceID) public payable {
         Insurance storage insurance = insurances[insuranceID];
         require(insurance.active, "Insurance not active");
         require(msg.value == insurance.cost, "Incorrect cost");
@@ -63,12 +64,12 @@ contract PetInsurance{
     }
 
     //提交索赔
-    function submitClaim(uint insuranceID, uint amount) public {
+    function submitClaim(uint insuranceID, uint claimAmount) public {
         require(insuranceOwners[insuranceID] == msg.sender, "You do not own this insurance.");
         claims.push(Claim({
             insuranceID: insuranceID,
             claimant: msg.sender,
-            amount: amount,
+            claimAmount: claimAmount,
             resolved: false 
         }));
     }
@@ -78,11 +79,11 @@ contract PetInsurance{
         Claim storage claim = claims[claimID];
         require(!claim.resolved, "Claim already resolved.");
         require(insuranceOwners[claim.insuranceID] == claim.claimant, "Claimant does not own the insurance.");
-        require(balances[owner] >= claim.amount, "Insufficient funds to resolve claim.");
+        require(balances[owner] >= claim.claimAmount, "Insufficient funds to resolve claim.");
 
         claim.resolved = true;
-        balances[owner] -= claim.amount;
-        payable(claim.claimant).transfer(claim.amount);
+        balances[owner] -= claim.claimAmount;
+        payable(claim.claimant).transfer(claim.claimAmount);
     }
 
     // 获取保险数量
