@@ -1,12 +1,12 @@
-## <div align="center"> Pet Insurance Smart Contract ??</div>
+## <div align="center"> Pet Insurance Smart Contract ğŸ±ğŸ¶</div>
 
 This project is a pet insurance smart contract developed with the Truffle framework, deployed on the Ethereum blockchain. It allows users to purchase insurance for their pets, submit claims, and handle these claims.
 
 ## Features
 
-**¡¤Purchase Insurance**: Users can buy insurance for their pets.
-**¡¤Submit Claims:** Insurance holders can submit claims for their pet's medical treatments.
-**¡¤Claim Review:** Contract owners can review and process claims.
+**Â·Purchase Insurance**: Users can buy insurance for their pets.
+**Â·Submit Claims:** Insurance holders can submit claims for their pet's medical treatments.
+**Â·Claim Review:** Contract owners can review and process claims.
 
 ## Quick Start
 
